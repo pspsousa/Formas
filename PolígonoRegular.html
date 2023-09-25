@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O Portal das Formas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="title">
+      <h1>Poligono Regular!</h1>
+    </div>
+    <a href="./index.html" class="voltar"><img src="img/voltar.png" alt="" width="30px"></a></a>
+  </header>
+<br>
+  <main>
+    <p> Escolha um polígono regular com um número variável de lados 
+        (por exemplo, pentágono, hexágono, heptágono, etc.)
+        Então usaremos fórmulas trigonométricas para dividir o polígono em triângulos e calcular a área total.</p>
+    <br>
+        <form>
+        <label for="lado">Tamanho do Lado: </label>
+        <br>
+        <input type="number" id="lado" placeholder="Tamanho do Lado"><br><br>
+        <br>
+        <label for="numeroLados">Número de Lados (N): </label>
+        <br>
+        <input type="number" id="numeroLados" placeholder="Número de Lados (N)"><br><br>
+        
+      
+      
+
+        <div class="btn"> 
+          <input class="btn-form" type="button" value="Calcular" onclick="calcularArea()"> 
+        </div> 
+<br>
+      </form>
+      <p id="resultado"></p>
+      </main>
+      
+      
+      
+      
+
+      <footer>
+        <p>Created by <span>PSPSOUSA</span> | all rights reserved</p>
+      </footer>
+      </body>
+            
+      <script>
+        function calcularArea() {
+          var lado = parseFloat(document.getElementById("lado").value);
+          var numeroLados = parseInt(document.getElementById("numeroLados").value);
+          
+          var apotema = lado / (2 * Math.tan(Math.PI / numeroLados));
+          var area = (numeroLados * lado * apotema) / 2;
+          
+          document.getElementById("resultado").innerHTML = "Área: " + area;
+        }
+        </script>
+      </html>
